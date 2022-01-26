@@ -5,7 +5,6 @@ class Solution:
             x+= str(i)
         y = int(x)
         z = str(y+1)
-        print(z)
         res = []
         for j in z:
             res.append(int(j))
