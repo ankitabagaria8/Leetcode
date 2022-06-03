@@ -7,7 +7,7 @@ FROM Tree
 
 
 
-
+# SELECT DISTINCT p_ID FROM Tree
 
 
 
