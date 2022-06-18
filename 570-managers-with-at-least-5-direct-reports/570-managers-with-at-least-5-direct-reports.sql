@@ -1,10 +1,10 @@
-SELECT A.name FROM
-(SELECT E2.name, COUNT(E1.id) AS num
-FROM Employee AS E1
-JOIN Employee AS E2
-ON E1.managerId = E2.id 
-GROUP BY E2.name) AS A
-WHERE A.num >= 5
+
+SELECT M.name
+FROM Employee AS E
+JOIN Employee AS M
+ON E.managerId = M.id 
+GROUP BY  M.name
+HAVING count(*) >= 5
 
 
 
@@ -28,6 +28,21 @@ WHERE A.num >= 5
 
 
 
+
+
+
+
+
+
+
+
+# SELECT A.name FROM
+# (SELECT E2.name, COUNT(E1.id) AS num
+# FROM Employee AS E1
+# JOIN Employee AS E2
+# ON E1.managerId = E2.id 
+# GROUP BY E2.name) AS A
+# WHERE A.num >= 5
 
 
 
