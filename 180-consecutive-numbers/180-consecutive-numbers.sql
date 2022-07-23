@@ -1,10 +1,41 @@
 # # Write your MySQL query statement below
-SELECT DISTINCT num AS ConsecutiveNums FROM
-(SELECT id, num, LEAD(num,1) OVER (ORDER BY id) AS lead1, 
-LEAD(num,2) OVER (ORDER BY id) AS lead2
+select distinct num AS ConsecutiveNums  FROM
+(SELECT id, num, lead(num) over (order by id) as lead1, lead(num,2) over (order by id) as lead2
 FROM Logs) AS A
-WHERE num = lead1
-AND num = lead2
+WHERE num = lead1 and num = lead2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SELECT DISTINCT num AS ConsecutiveNums FROM
+# (SELECT id, num, LEAD(num,1) OVER (ORDER BY id) AS lead1, 
+# LEAD(num,2) OVER (ORDER BY id) AS lead2
+# FROM Logs) AS A
+# WHERE num = lead1
+# AND num = lead2
 
 
 
