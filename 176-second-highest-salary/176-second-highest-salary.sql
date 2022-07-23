@@ -1,9 +1,36 @@
 # Write your MySQL query statement below
 
-SELECT CASE WHEN MAX(ranking) = 1 THEN null ELSE salary END SecondHighestSalary FROM 
-(SELECT SALARY, DENSE_RANK() OVER (ORDER BY salary DESC) AS ranking
-FROM Employee) AS E
+SELECT (CASE WHEN max(ranking) = 1 THEN null else A.salary end) AS SecondHighestSalary FROM 
+(SELECT salary, dense_rank() over (ORDER BY salary DESC) as ranking FROM Employee) AS A
 WHERE ranking = 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SELECT CASE WHEN MAX(ranking) = 1 THEN null ELSE salary END SecondHighestSalary FROM 
+# (SELECT SALARY, DENSE_RANK() OVER (ORDER BY salary DESC) AS ranking
+# FROM Employee) AS E
+# WHERE ranking = 2
 
 
 
